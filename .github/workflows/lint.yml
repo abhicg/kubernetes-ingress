@@ -20,7 +20,7 @@ defaults:
     shell: bash
 
 env:
-  GOLANGCI_VERSION: 1.29
+  GOLANGCI_VERSION: 1.32
   GOLANGCI_TIMEOUT: 10m0s
 
 jobs:
@@ -31,10 +31,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Setup Golang Environment
-        uses: actions/setup-go@v2
-        with:
-          go-version: '${{ env.GOLANG_VERSION }}'
       - name: Lint Code
         uses: golangci/golangci-lint-action@v2
         with:
