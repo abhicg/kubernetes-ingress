@@ -55,9 +55,6 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: '${{ env.GOLANG_VERSION }}'
-      - run: |
-          go mod init
-          go mod tidy
       - name: Build Binary
         run: >
           make binary
