@@ -20,6 +20,7 @@ cleanup
 mkdir -p "${TMP_DIFFROOT}"
 cp -a "${DIFFROOT}"/* "${TMP_DIFFROOT}"
 
+go install sigs.k8s.io/controller-tools/cmd/controller-gen
 controller-gen schemapatch:manifests=./deployments/common/ paths="./pkg/apis/configuration/..." output:dir=${TMP_DIFFROOT}
 echo "diffing ${DIFFROOT} against potentially updated crds"
 ret=0

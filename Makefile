@@ -40,6 +40,7 @@ update-codegen:
 	./hack/update-codegen.sh
 
 update-crds:
+	@go install sigs.k8s.io/controller-tools/cmd/controller-gen
 	controller-gen schemapatch:manifests=./deployments/common/ paths=./pkg/apis/configuration/... output:dir=./deployments/common
 
 certificate-and-key:
